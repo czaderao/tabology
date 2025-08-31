@@ -1,4 +1,5 @@
 #app {
+    max-width: 100%;
     width: 400px;
     height: 400px;
     margin: 0 auto;
@@ -7,8 +8,9 @@
 
 .marker {
     position: absolute;
-    width: 60px;
-    left: 172px;
+    width: 15%; /* More responsive */
+    left: 50%;
+    transform: translateX(-50%);
     top: -20px;
     z-index: 2;
 }
@@ -20,7 +22,8 @@
 
 .button {
     display: block;
-    width: 250px;
+    width: 80%; /* responsive */
+    max-width: 250px;
     margin: 40px auto;
     cursor: pointer;
 }
@@ -34,10 +37,7 @@
 }
 
 @keyframes blur {
-    0% {
-        filter: blur(1.5px);
-    }
-    80% {
+    0%, 80% {
         filter: blur(1.5px);
     }
     100% {
@@ -48,31 +48,59 @@
 body {
     background-image: url('src/back.jpg');
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
     background-attachment: fixed;
-
+    margin: 0;
+    padding: 0;
 }
 
 .custDiv {
     text-align: center;
     margin: 0 auto;
+    padding: 10px;
 }
 
 .container {
     display: flex;
-    justify-content: center;  /* Horizontal centering */
-    align-items: center;      /* Vertical centering */
-    height: 80vh;            /* Full viewport height */
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    padding: 10px;
+    box-sizing: border-box;
 }
+
 .descP {
     text-align: center;
     margin: 20px auto;
     padding: 15px 25px;
-    max-width: 600px;
-    border: 2px solid #d32f2f; /* a nicer red */
+    max-width: 90%;
+    border: 2px solid #d32f2f;
     border-radius: 8px;
-    background-color: #ffcc80; /* a softer orange */
+    background-color: #ffcc80;
     color: #333;
     font-family: 'Comic Sans MS', Tahoma, Geneva, Verdana, sans-serif;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 📱 Responsive for small screens */
+@media (max-width: 480px) {
+    #app {
+        width: 90vw;
+        height: 90vw;
+    }
+
+    .marker {
+        width: 20%;
+        top: -10px;
+    }
+
+    .button {
+        width: 90%;
+        font-size: 1rem;
+    }
+
+    .descP {
+        font-size: 0.95rem;
+        padding: 10px 15px;
+    }
 }
