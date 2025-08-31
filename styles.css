@@ -82,25 +82,24 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* 📱 Responsive for small screens */
 @media (max-width: 480px) {
     #app {
-        width: 90vw;
-        height: 90vw;
+        width: 100vw;         /* Use full viewport width */
+        height: 100vw;        /* Keep it square */
     }
 
     .marker {
-        width: 20%;
-        top: -10px;
+        width: 30%;           /* Make the marker significantly bigger */
+        top: -15px;           /* Adjust position for the increased size */
     }
 
     .button {
-        width: 90%;
+        width: 95%;
         font-size: 1rem;
     }
 
     .descP {
-        font-size: 0.95rem;
+        font-size: 1rem;
         padding: 10px 15px;
     }
 }
